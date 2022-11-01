@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS file link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css">
+
+    <!-- google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- title here -->
+    <title>My Notepad - Login</title>
+
+    <style>
+        .sel {
+            display: block;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 9px 18px;
+            width: 100%;
+            border-radius: 23px;
+            outline: none;
+            margin: 5px auto;
+        }
+    </style>
+</head>
+
+<script>
+    function validation(){
+        var flag=true;
+        var shopName = document.shopInfo.shopName.value;
+        var city = document.shopInfo.city.value;
+        var landmark = document.shopInfo.landmark.value;
+        var category = document.shopInfo.category.value;
+        var desc = document.shopInfo.desc.value;
+
+        shopNameid = document.getElementById("shopName");
+
+        if(shopName.length<2){
+            shopNameid.style.borderColor = "red";
+            shopNameid.style.borderStyle = "solid";
+            return false;
+        }
+    }
+</script>
+
+<body>
+
+    <div class="login-container">
+        <h1>Fill Shop information</h1>
+        <!-- Login details Fill form -->
+        <form name="shopInfo" action="/shops/saveShop" method="POST" enctype="multipart/form-data" onsubmit="return validation()">
+            {% csrf_token %}
+            <label for="email">Shop Name</label>
+            <input id="shopName" placeholder="Enter the shop name" name="shopName">
+
+            <label for="password">City</label>
+            <input id="password" placeholder="Enter City" name="city">
+
+            <label>Landmark</label>
+            <input id="landmark" name="landmark" placeholder="Near railway station">
+
+            <label class="lb" for="category">Category:</label>
+
+            <select id="category" name="category" class="sel">
+                <option value="food">Food</option>
+                <option value="Vegetable/Fruit">Vegetable/Fruit</option>
+                <option value="Home decor">Home Decor</option>
+                <option value="others" selected>Others</option>
+            </select>
+
+            <label for="img">Upload an Image</label>
+            <input id="img" name="img" type="file" accept="image/*">
+
+            <label>Description</label>
+            <textarea id="desc" name="description" id="addTxt" cols="40" rows="5" name="textarea"></textarea>
+
+            <button type="submit" style="width: 150px; height: 50px;">POST</button>
+            <p>{{error}}</p>
+        </form>
+    </div>
+
+    <!-- Javascript fire link -->
+    <script src="{% static 'javascript/script.js' %}"></script>
+</body>
+
+</html>

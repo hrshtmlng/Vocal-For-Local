@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+{% load socialaccount %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS file link -->
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css"> -->
+
+    <title>Vocal For Local</title>
+</head>
+
+<style>
+    body {
+        background-image: url("{% static 'images/v5-transformed.jpeg' %}");
+        background-repeat: no-repeat;
+        background-size: 60% 80%;
+    }
+
+    .red a {
+        display: inline;
+        margin-right: 20px;
+        font-size: 20px;
+        font-family: cursive;
+        margin-top: 10px;
+    }
+
+    .login {
+        -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
+        -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
+        color: #333;
+        background-color: #FA2;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 4px 16px;
+        text-shadow: #FE6 0 1px 0
+    }
+
+    a.login:hover {
+        border: solid 1px #20538D;
+    }
+</style>
+
+<body class="h-screen">
+
+    <div style="text-align:right; margin-right: 190px; margin-top:180px;">
+        <h2 class="text-4xl md:text-4xl text-gray-700 font-bold" style="margin-bottom: 20px;">Explore Local Vendores Near You</h2>
+        <div style="text-align: center; margin-right: 12%; margin-left: 70%; padding-top: 20px;">
+            <div class="red">
+                <a class="login" href="/account/login">Login</a>
+                <a class="login" href="/account/signup">Register</a>
+            </div>
+            <h2 class="font-bold" style="margin-top: 20px;">OR</h2>
+            <a href="{% provider_login_url 'google' %}">
+                <img src="{% static 'images/google-signin-button.png' %}" style="width: 240px;height:60px;margin-top: 20px;">
+            </a>
+        </div>
+        <!-- <form action="/shops/showShops" method="post">
+            <div class=" pt-10" style="">
+                <label class="text-3xl md:text-3xl font-semibold">Select your city</label>
+                <select name="city" class="text-2xl md:text-2xl" style="border: 1px solid gray;">
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Indore">Indore</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                </select>
+            </div>
+            <div class="pt-8">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    style="margin-right: 18%;">
+                    Search
+                </button>
+            </div>
+        </form> -->
+    </div>
+    </form>
+</body>
+
+</html>
