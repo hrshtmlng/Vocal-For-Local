@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="vfl1">
+    <h1>Fill Shop's Details Here</h1>
+    <div class="shop-name">
+        <h2>Shop Name</h2>
+        <input type="text" placeholder="Enter the shop name"/>
+    </div>
+    <div class="city">
+        <h2>City</h2>
+        <input type="text" placeholder="Enter city"/>
+    </div>
+    <div class="landmark">
+        <h2>Landmark</h2>
+        <input type="text" placeholder="Near railway station"/>
+    </div>
+    <div class="category">
+        <h2>Category</h2>
+        <form>
+            <select name="choice">
+                <option value="others">Others</option>
+                <option value="cafe">Cafe</option>
+                <option value="crockery">crockery</option>
+            </select>
+        </form>
+    </div>
+    <div class="img">
+        <h2>Upload an Image</h2>
+        <input type="file" accept="image/*" onchange="loadFile(event)">
+        <p><img id="output" width="200"/></p>
+    </div>
+    <div class="description">
+        <h2>Description</h2>
+        <textarea id="desc"  id="addTxt" cols="40" rows="5" name="textarea"></textarea>
+    </div>
+    <button id="submit">Submit</button>
+    </nav>
+</body>
+</html>
